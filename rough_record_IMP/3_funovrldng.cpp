@@ -5,10 +5,10 @@ void foo(int a, int b)
 {
 	if((a%b)==0)
 	{
-		cout<<"First number divisible by second\n";
+		cout<<a<<" is divisible by "<<b"\n";
 	}
 	else
-		cout<<"First number not divisible by second\n";
+		cout<<a<<" is not divisible by "<<b"\n";
 }
 void foo(int num)
 {
