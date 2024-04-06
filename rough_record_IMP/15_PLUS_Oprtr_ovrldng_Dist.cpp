@@ -16,9 +16,9 @@ class Distance
 			}
 			m = y;
 		}
-		string get()
+		void print()
 		{
-			return to_string(km)+"."+to_string(m)+"kms";
+			cout<<km<<"."<<m<<"kms";
 		}
 		Distance operator +(Distance &);
 };
@@ -42,12 +42,16 @@ int main()
 	cin>>m;
 	Distance d1(k,m);
 	cout<<"\nEnter Second distance:\n";
-        cout<<"KM: ";
-        cin>>k;
-        cout<<"M: ";
-        cin>>m;
+    cout<<"KM: ";
+    cin>>k;
+    cout<<"M: ";
+    cin>>m;
  	Distance d2(k,m), d3(0,0);
 	d3 = d1 + d2;
-	cout<<d1.get()<<" + "<<d2.get()<<" = "<<d3.get();
+	d1.print();
+	cout<<" + ";
+	d2.print();
+	cout<<" = ";
+	d3.print();
 	return 0;
 }

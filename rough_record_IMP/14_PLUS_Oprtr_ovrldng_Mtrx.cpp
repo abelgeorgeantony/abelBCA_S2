@@ -1,4 +1,5 @@
 #include<iostream>
+#include<cstdlib>
 using namespace std;
 
 class Matrix
@@ -46,10 +47,10 @@ Matrix operator +(Matrix &m1, Matrix &m2)
 	Matrix sum(m1.rows,m1.cols);
 	for(int i = 0; i < sum.rows; i++)
         {
-                for(int j = 0; j < sum.cols; j++)
-                {
-			sum.data[(i*sum.cols)+j] = m1.data[(i*sum.cols)+j] + m2.data[(i*sum.cols)+j];
-                }
+            for(int j = 0; j < sum.cols; j++)
+            {
+				sum.data[(i*sum.cols)+j] = m1.data[(i*sum.cols)+j] + m2.data[(i*sum.cols)+j];
+            }
         }
 	return sum;
 }

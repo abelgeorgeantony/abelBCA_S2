@@ -1,4 +1,4 @@
-#include<iostream>l
+#include<iostream>
 using namespace std;
 
 class Time
@@ -14,11 +14,7 @@ class Time
 		}
 		void print()
 		{
-			cout<<"\n"<<hour<<":"<<minute<<":"<<second<<"\n";
-		}
-		string get()
-		{
-			return to_string(hour)+":"+to_string(minute)+":"+to_string(second);
+			cout<<hour<<"hr:"<<minute<<"min:"<<second<<"s";
 		}
 		Time operator +(Time &);
 };
@@ -32,7 +28,9 @@ Time Time::operator +(Time &t)
 		temp.second = temp.second % 60;
 	temp.hour = hour + t.hour + (temp.minute/60);
 	if(temp.minute>60)
-                temp.minute = temp.minute % 60;
+        temp.minute = temp.minute % 60;
+    if(temp.hour>24)
+    	temp.hour = temp.hour % 24;
 	return temp;
 }
 
@@ -45,19 +43,25 @@ int main()
 	cout<<"Hour: ";
 	cin>>a;
 	cout<<"Minute: ";
-        cin>>b;
+    cin>>b;
 	cout<<"Second: ";
-        cin>>c;
+    cin>>c;
 	T1.read(a,b,c);
 	cout<<"\nEnter Second time:\n";
-        cout<<"Hour: ";
-        cin>>a;
-        cout<<"Minute: ";
-        cin>>b;
-        cout<<"Second: ";
-        cin>>c;
+    cout<<"Hour: ";
+    cin>>a;
+    cout<<"Minute: ";
+    cin>>b;
+    cout<<"Second: ";
+    cin>>c;
 	T2.read(a,b,c);
 	T3 = T1 + T2;
-	cout<<"\n"<<T1.get()<<" + "<<T2.get()<<" = "<<T3.get()<<"\n";
+	cout<<"\n";
+	T1.print();
+	cout<<" + ";
+	T2.print();
+	cout<<" = ";
+	T3.print();
+	cout<<"\n";
 	return 0;
 }
