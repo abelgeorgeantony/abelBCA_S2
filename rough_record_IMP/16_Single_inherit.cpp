@@ -49,7 +49,7 @@ int main()
 	Marks m;
 	m.Student::read();
 	m.Marks::read();
-	cout<<"\nEntered details:\n";
+	cout<<"\nStored Details of the student:-\n";
 	m.Student::print();
 	m.Marks::print();
 }
